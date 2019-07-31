@@ -6,6 +6,7 @@ RUN apt-get update && \
 		openjdk-8-jre-headless \
  		wget \
 		git && \
+	rm -rf /var/lib/apt/lists/* && \
   mkdir -p /tool/choco && \
 	cd /tool/choco && \
 	# fetch the compiled version of choco-parser-4.10.3
