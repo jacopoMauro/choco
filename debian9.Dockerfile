@@ -9,8 +9,9 @@ RUN apt-get update && \
   mkdir -p /tool/choco && \
 	cd /tool/choco && \
 	# fetch the compiled version of choco-parser-4.0.5
-	git clone --depth=1 https://github.com/lteu/choco-parsers-4.0.5 && \
-	mv choco-parsers-4.0.5/choco-parsers-4.0.5-with-dependencies.jar choco-parsers.jar && \
+	# git clone --depth=1 https://github.com/lteu/choco-parsers-4.0.5 && \
+	git clone  --depth=1 https://github.com/chocoteam/choco-solver/releases/download/4.10.3/choco-parsers-4.10.3-jar-with-dependencies.jar && \
+	mv choco-parsers-4.10.3-jar-with-dependencies.jar choco-parsers.jar && \
 	# retreive last global constraints redefinitions
 	git clone --depth=1 https://github.com/chocoteam/choco-parsers.git && \
 	mv /tool/choco/choco-parsers/src/main/mzn_lib /tool/choco/mzn-lib && \
