@@ -17,6 +17,8 @@ RUN apt-get update && \
 	mv /tool/choco/choco-parsers/src/main/mzn_lib /tool/choco/mzn-lib && \
 	mv /tool/choco/choco-parsers/src/main/bash/fzn-exec.sh /tool/choco/fzn-choco && \
     sed -i 's&DIR=.*&DIR=/tool/choco&g' /tool/choco/fzn-choco && \
+  # temp fix to remove the -tl option
+  	sed -i 's/\-tl \$TIME_LIMIT/ /g' fzn-choco /tool/choco/fzn-choco && \
 	rm -rf /tool/choco/choco-parsers
 
 ENV PATH "$PATH:/tool/choco/"
